@@ -15,7 +15,7 @@ public class TE_Classes {
 		public int getAgentId() {
 			return agentId;
 		}
-		public void setAgentId(int agentID) {
+		public void setAgentId(int agentId) {
 			this.agentId = agentId;
 		}
 		public String getAgtFirstName() {
@@ -125,4 +125,94 @@ public class TE_Classes {
 		private double pkgBasePrice;
 		private double pkgAgencyCommission;
 	}
+	
+	public class ProductSupplier
+    {
+		//Constructor.
+		public ProductSupplier() {
+			
+		}
+		
+		//Properties.
+        public int getProductSupplierId() { 
+        	return productSupplierId;
+        }
+        public void setProductSupplierId(int productSupplierId) {
+        	this.productSupplierId = productSupplierId;
+        }
+        public Product getMyProduct() { 
+        	return myProduct;
+        }
+        public void setMyProduct(Product myProduct) {
+        	this.myProduct = myProduct;
+        }
+        public Supplier getMySupplier() { 
+        	return mySupplier;
+        }
+        public void setMySupplier(Supplier mySupplier) {
+        	this.mySupplier = mySupplier;
+        }
+        
+        private int productSupplierId;
+        private Product myProduct;
+        private Supplier mySupplier;
+        
+        //Scrap yard of unused constructors from C#.
+        //public int ProductId { get; set; }
+        //public int SupplierId { get; set; }
+        //public string SupName { get; set; }
+        //public string ProdName { get; set; }
+    }
+	
+	public class Product
+    {
+        //Constructor.
+		public Product() {
+			
+		}
+		
+		//Class attributes.
+        private int productId;
+        private String prodName;
+
+        //Class properties.
+        public int getProductId() { 
+        	return productId;
+        }
+        public void setProductId(int productId) {
+        	this.productId = productId;
+        }
+        public String getProdName() { 
+        	return prodName;
+        }
+        public void setProdName(String prodName) {
+        	this.prodName = prodName;
+        }
+    }
+	
+	public class Supplier
+    {
+        //Constructor.
+		public Supplier() {
+			
+		}
+		
+		//Class attributes.
+        private int supplierId;
+        private String supName;
+
+        //Class properties.
+        public int getSupplierId() { 
+        	return supplierId;
+        }
+        public void setSupplierId(int supplierId) {
+        	this.supplierId = supplierId;
+        }
+        public String getSupName() { 
+        	return supName;
+        }
+        public void setSupName(String supName) {
+        	this.supName = supName;
+        }
+    }
 }
