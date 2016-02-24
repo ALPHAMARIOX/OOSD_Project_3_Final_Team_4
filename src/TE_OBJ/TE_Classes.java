@@ -1,5 +1,7 @@
 package TE_OBJ;
 
+import java.util.Calendar;
+
 public class TE_Classes {
 	
 	public class Agent {
@@ -10,12 +12,11 @@ public class TE_Classes {
 		}
 		
 		//Properties.
-		private int agentID;
-		public int getAgentID() {
-			return agentID;
+		public int getAgentId() {
+			return agentId;
 		}
-		public void setAgentID(int agentID) {
-			this.agentID = agentID;
+		public void setAgentId(int agentID) {
+			this.agentId = agentId;
 		}
 		public String getAgtFirstName() {
 			return agtFirstName;
@@ -55,6 +56,7 @@ public class TE_Classes {
 		}
 
 		//Attributes.
+		private int agentId;
 		private String agtFirstName;
 		private String agtMiddleInitials;
 		private String agtLastName;
@@ -69,5 +71,58 @@ public class TE_Classes {
 		public Package(){
 			
 		}
+		
+		//Properties.
+		public int getPackageId() {
+			return packageId;
+		}
+		public void setPackageId(int packageId) {
+			this.packageId = packageId;
+		}
+		public String getPkgName() {
+			return pkgName;
+		}
+		public void setPkgName(String pkgName) {
+			this.pkgName = pkgName;
+		}
+		public Calendar getPkgStartDate() {
+			return pkgStartDate;
+		}
+		public void setPkgStartDate(Calendar pkgStartDate) {
+			this.pkgStartDate = pkgStartDate;
+		}
+		public Calendar getPkgEndDate() {
+			return pkgEndDate;
+		}
+		public void setPkgEndDate(Calendar pkgEndDate) {
+			this.pkgEndDate = pkgEndDate;
+		}
+		public String getPkgDesc() {
+			return pkgDesc;
+		}
+		public void setPkgDesc(String pkgDesc) {
+			this.pkgDesc = pkgDesc;
+		}
+		public double getPkgBasePrice() {
+			return pkgBasePrice;
+		}
+		public void setPkgBasePrice(double pkgBasePrice) {
+			this.pkgBasePrice = pkgBasePrice;
+		}
+		public double getPkgAgencyCommission() {
+			return pkgAgencyCommission;
+		}
+		public void setPkgAgencyCommission(double pkgAgencyCommission) {
+			this.pkgAgencyCommission = pkgAgencyCommission;
+		}
+
+		//Attributes.
+		private int packageId;
+		private String pkgName;
+		private Calendar pkgStartDate;
+		private Calendar pkgEndDate;
+		private String pkgDesc;
+		private double pkgBasePrice;
+		private double pkgAgencyCommission;
 	}
 }
