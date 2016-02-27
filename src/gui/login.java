@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Component;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
 
 public class login extends JFrame {
 
@@ -55,11 +57,13 @@ public class login extends JFrame {
 		contentPane.setLayout(null);
 		
 		tfEmail = new JTextField();
+		tfEmail.setToolTipText("Enter your business email.");
 		tfEmail.setBounds(236, 84, 114, 19);
 		contentPane.add(tfEmail);
 		tfEmail.setColumns(10);
 		
 		pwfAgtPassword = new JPasswordField();
+		pwfAgtPassword.setToolTipText("Enter your password.");
 		pwfAgtPassword.setBounds(236, 133, 114, 19);
 		contentPane.add(pwfAgtPassword);
 		
@@ -78,5 +82,6 @@ public class login extends JFrame {
 		});
 		btnLogin.setBounds(233, 204, 117, 25);
 		contentPane.add(btnLogin);
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, lblEmail, tfEmail, lblPassword, pwfAgtPassword, btnLogin}));
 	}
 }
