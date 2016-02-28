@@ -1,6 +1,8 @@
 package TE_OBJ;
 
 import java.util.Calendar;
+
+import sun.security.util.Password;
 /*import java.io.*;
 import sun.audio.*;*/
 
@@ -56,6 +58,12 @@ public class TE_Classes {
 		public void setAgtPosition(String agtPosition) {
 			this.agtPosition = agtPosition;
 		}
+		public Password getAgtPassword() {
+			return agtPassword;
+		}
+		public void setAgtPassword() {
+			this.agtPassword = agtPassword;
+		}
 
 		//Attributes.
 		private int agentId;
@@ -65,6 +73,7 @@ public class TE_Classes {
 		private String agtBusPhone;
 		private String agtEmail;
 		private String agtPosition;
+		private Password agtPassword;
 	}
 	
 	public class Package {
@@ -217,4 +226,100 @@ public class TE_Classes {
         	this.supName = supName;
         }
     }
+	
+	public class Customer
+	{
+		//Constructor.
+		public Customer() {
+			
+		}
+		
+		//Class attributes.
+		private int customerId;
+		private String custFirstName;
+		private String custLastName;
+		private String custAddress;
+		private String custCity;
+		private String custProv;
+		private String custPostal;
+		private String custHomePhone;
+		private String custBusPhone;
+		private String custEmail;
+		private Password custPassword;
+		private int agtId;
+		
+		//Properties.
+		public int getCustomerId() {
+			return customerId;
+		}
+		public void setCustomerId(int customerId) {
+			this.customerId = customerId;
+		}
+		public String getCustFirstName() {
+			return custFirstName;
+		}
+		public void setCustFirstName(String custFirstName) {
+			this.custFirstName = custFirstName;
+		}
+		public String getCustLastName() {
+			return custLastName;
+		}
+		public void setCustLastName(String custLastName) {
+			this.custLastName = custLastName;
+		}
+		public String getCustAddress() {
+			return custAddress;
+		}
+		public void setCustAddress(String custAddress) {
+			this.custAddress = custAddress;
+		}
+		public String getCustCity() {
+			return custCity;
+		}
+		public void setCustCity(String custCity) {
+			this.custCity = custCity;
+		}
+		public String getCustProv() {
+			return custProv;
+		}
+		public void setCustProv(String custProv) {
+			this.custProv = custProv;
+		}
+		public String getCustPostal() {
+			return custPostal;
+		}
+		public void setCustPostal(String custPostal) {
+			this.custPostal = custPostal;
+		}
+		public String getCustHomePhone() {
+			return custHomePhone;
+		}
+		public void setCustHomePhone(String custHomePhone) {
+			this.custHomePhone = custHomePhone;
+		}
+		public String getCustBusPhone() {
+			return custBusPhone;
+		}
+		public void setCustBusPhone(String custBusPhone) {
+			this.custBusPhone = custBusPhone;
+		}
+		public String getCustEmail() {
+			return custEmail;
+		}
+		public void setCustEmail(String custEmail) {
+			this.custEmail = custEmail;
+		}
+		public Password getCustPassword() {
+			return custPassword;
+		}
+		public void setCustPassword(Password custPassword) {
+			this.custPassword = custPassword;
+		}
+		public int getAgtId() {
+			return agtId;
+		}
+		public void setAgtId(int agtId) {
+			this.agtId = agtId;
+		}
+	}
 }

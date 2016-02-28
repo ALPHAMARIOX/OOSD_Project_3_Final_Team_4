@@ -1,7 +1,7 @@
 package gui;
 
-import java.awt.BorderLayout;
 import TE_OBJ.TE_Classes;
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
