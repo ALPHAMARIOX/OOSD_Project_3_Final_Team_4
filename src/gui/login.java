@@ -1,6 +1,9 @@
 package gui;
 
 import TE_OBJ.TE_Classes;
+
+import db.*;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -16,7 +19,10 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Component;
+
 import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class login extends JFrame {
 
@@ -76,8 +82,10 @@ public class login extends JFrame {
 		contentPane.add(lblPassword);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		btnLogin.setToolTipText("Log into the database.");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		btnLogin.setBounds(233, 204, 117, 25);
