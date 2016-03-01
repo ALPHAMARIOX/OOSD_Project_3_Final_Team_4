@@ -41,7 +41,7 @@ public class Main extends JFrame {
 		setTitle("Travel Experts Database Modifier");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("/home/user1/workspace/OOSD_Project_3_Final_Team_4/img/palmtree.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 700, 400);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -55,18 +55,34 @@ public class Main extends JFrame {
 				System.exit(0);
 			}
 		});
+		
+		JMenu mnNew = new JMenu("New");
+		mnFile.add(mnNew);
+		
+		JMenuItem mntmPackage = new JMenuItem("Package");
+		mnNew.add(mntmPackage);
 		mnFile.add(mntmExit);
 		
 		JMenu mnSettings = new JMenu("Settings");
 		menuBar.add(mnSettings);
 		
 		JMenuItem mntmSetColor = new JMenuItem("Set Color");
+		mntmSetColor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		mnSettings.add(mntmSetColor);
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
 		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				About about = new About();
+				about.setVisible(true);
+			}
+		});
 		mnHelp.add(mntmAbout);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

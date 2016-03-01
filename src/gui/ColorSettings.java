@@ -1,18 +1,17 @@
 package gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Window.Type;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-//Dialog box that can be access via the Main application in the Help menu under "About"
-public class About extends JDialog {
+public class ColorSettings extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 
@@ -21,7 +20,7 @@ public class About extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			About dialog = new About();
+			ColorSettings dialog = new ColorSettings();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -32,9 +31,7 @@ public class About extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public About() {
-		setModal(true);
-		setTitle("About");
+	public ColorSettings() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
@@ -46,15 +43,19 @@ public class About extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
-				okButton.setToolTipText("Return to the program.");
-				okButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						About.this.setVisible(false);
-					}
-				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						ColorSettings.this.setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
 			}
 		}
 	}
