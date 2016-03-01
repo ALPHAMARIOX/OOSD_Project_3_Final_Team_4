@@ -33,6 +33,7 @@ public class About extends JDialog {
 	 * Create the dialog.
 	 */
 	public About() {
+		setResizable(false);
 		setModal(true);
 		setTitle("About");
 		setBounds(100, 100, 450, 300);

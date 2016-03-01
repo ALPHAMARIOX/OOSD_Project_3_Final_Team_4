@@ -69,6 +69,8 @@ public class Main extends JFrame {
 		JMenuItem mntmSetColor = new JMenuItem("Set Color");
 		mntmSetColor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ColorSettings cSet = new ColorSettings();
+				cSet.setVisible(true);
 			}
 		});
 		mnSettings.add(mntmSetColor);

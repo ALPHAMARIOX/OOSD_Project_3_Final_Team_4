@@ -31,6 +31,7 @@ public class splash extends JWindow
 					otter.play();
 			Thread.sleep(6000);
 			dispose();
+			otter.stop();
 			login login = new login();
 			login.setVisible(true);
 			/*javax.swing.JOptionPane.showMessageDialog((java.awt.Component)
