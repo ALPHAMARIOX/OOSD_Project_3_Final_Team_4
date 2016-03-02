@@ -61,34 +61,77 @@ public class Main extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenu mnFile = new JMenu("File");
+		mnFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		menuBar.add(mnFile);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, InputEvent.CTRL_MASK));
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				useSound();
 				System.exit(0);
 			}
 		});
 		
 		JMenu mnNew = new JMenu("New");
+		mnNew.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnFile.add(mnNew);
 		
 		JMenuItem mntmAgent = new JMenuItem("Agent");
+		mntmAgent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnNew.add(mntmAgent);
 		
 		JMenuItem mntmPackage = new JMenuItem("Package");
+		mntmPackage.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnNew.add(mntmPackage);
 		
 		JMenuItem mntmProduct = new JMenuItem("Product");
+		mntmProduct.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnNew.add(mntmProduct);
 		
 		JMenuItem mntmProductSupplier = new JMenuItem("Product Supplier");
+		mntmProductSupplier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnNew.add(mntmProductSupplier);
 		
 		JMenuItem mntmSupplier = new JMenuItem("Supplier");
+		mntmSupplier.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnNew.add(mntmSupplier);
 		
 		JMenuItem mntmSave = new JMenuItem("Save");
+		mntmSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
+		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mnFile.add(mntmSave);
 		
 		JSeparator separator = new JSeparator();
@@ -96,21 +139,50 @@ public class Main extends JFrame {
 		mnFile.add(mntmExit);
 		
 		JMenu mnEdit = new JMenu("Edit");
+		mnEdit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		menuBar.add(mnEdit);
 		
 		JMenuItem mntmUndo = new JMenuItem("Undo");
+		mntmUndo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
+		mntmUndo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmUndo);
 		
 		JMenuItem mntmRedo = new JMenuItem("Redo");
+		mntmRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK));
+		mntmRedo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnEdit.add(mntmRedo);
 		
 		JSeparator separator_2 = new JSeparator();
 		mnEdit.add(separator_2);
 		
 		JMenuItem mntmCut = new JMenuItem("Cut");
+		mntmCut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.CTRL_MASK));
+		mntmCut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnEdit.add(mntmCut);
 		
 		JMenuItem mntmCopy = new JMenuItem("Copy");
+		mntmCopy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_MASK));
+		mntmCopy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		mnEdit.add(mntmCopy);
 		
 		JMenuItem mntmPaste = new JMenuItem("Paste");
@@ -122,7 +194,24 @@ public class Main extends JFrame {
 		mntmPaste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmPaste);
 		
+		JSeparator separator_3 = new JSeparator();
+		mnEdit.add(separator_3);
+		
+		JMenuItem mntmSelectAll = new JMenuItem("Select All");
+		mntmSelectAll.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
+		mntmSelectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
+		mnEdit.add(mntmSelectAll);
+		
 		JMenu mnSettings = new JMenu("Settings");
+		mnSettings.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		menuBar.add(mnSettings);
 		
 		JMenuItem mntmSetColor = new JMenuItem("Set Color");
@@ -155,6 +244,11 @@ public class Main extends JFrame {
 		mnSettings.add(chckbxmntmToggleSound);
 		
 		JMenu mnHelp = new JMenu("Help");
+		mnHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
 		menuBar.add(mnHelp);
 		
 		JMenuItem mntmAbout = new JMenuItem("About");
@@ -165,6 +259,18 @@ public class Main extends JFrame {
 				about.setVisible(true);
 			}
 		});
+		
+		JMenuItem mntmUserManual = new JMenuItem("User Manual");
+		mntmUserManual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				useSound();
+			}
+		});
+		mntmUserManual.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
+		mnHelp.add(mntmUserManual);
+		
+		JSeparator separator_4 = new JSeparator();
+		mnHelp.add(separator_4);
 		mnHelp.add(mntmAbout);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
