@@ -13,10 +13,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
+import javax.swing.JSlider;
 
 public class ColorSettings extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private Main m = new Main();
 
 	/**
 	 * Launch the application.
@@ -58,6 +60,11 @@ public class ColorSettings extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						m.useSound();
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
@@ -66,6 +73,7 @@ public class ColorSettings extends JDialog {
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						m.useSound();
 						ColorSettings.this.setVisible(false);
 					}
 				});

@@ -2,12 +2,11 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import settings.ToggleSound;
 
@@ -228,6 +227,8 @@ public class Main extends JFrame {
 		mntmSetFont.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				useSound();
+				FontSettings fSet = new FontSettings();
+				fSet.setVisible(true);
 			}
 		});
 		mnSettings.add(mntmSetFont);
@@ -235,7 +236,7 @@ public class Main extends JFrame {
 		JSeparator separator_1 = new JSeparator();
 		mnSettings.add(separator_1);
 		
-		final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
+		//final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
 		chckbxmntmToggleSound.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				useSound();

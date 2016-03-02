@@ -1,7 +1,5 @@
 package gui;
 
-//import gui.Main;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
@@ -9,13 +7,10 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Window.Type;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Toolkit;
 
-//Dialog box that can be access via the Main application in the Help menu under "About"
-public class About extends JDialog {
+public class FontSettings extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private Main m = new Main();
@@ -25,7 +20,7 @@ public class About extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			About dialog = new About();
+			FontSettings dialog = new FontSettings();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -36,32 +31,38 @@ public class About extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public About() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("/home/user1/workspace/OOSD_Project_3_Final_Team_4/img/palmtree.png"));
-		setResizable(false);
-		setModal(true);
-		setTitle("About");
+	public FontSettings() {
+		setTitle("Set Font");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(null);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
-				okButton.setToolTipText("Return to the program.");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						m.useSound();
-						About.this.setVisible(false);
 					}
 				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						m.useSound();
+						FontSettings.this.setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
 			}
 		}
 	}
