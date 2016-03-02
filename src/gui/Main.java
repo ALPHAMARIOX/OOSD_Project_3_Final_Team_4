@@ -27,6 +27,7 @@ import java.awt.event.InputEvent;
 
 public class Main extends JFrame {
 
+	//Properties for the Main Frame.
 	public ToggleSound ts = new ToggleSound();
 	private JPanel contentPane;
 	private final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
@@ -50,15 +51,18 @@ public class Main extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	//Constructor.
 	public Main() {
 		setTitle("Travel Experts Database Modifier");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("/home/user1/workspace/OOSD_Project_3_Final_Team_4/img/palmtree.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 700, 400);
 		
+		//Menu bar.
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
+		//File menu.
 		JMenu mnFile = new JMenu("File");
 		mnFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -67,6 +71,7 @@ public class Main extends JFrame {
 		});
 		menuBar.add(mnFile);
 		
+		//Exit the application. May prompt when there are uncommitted changes.
 		JMenuItem mntmExit = new JMenuItem("Exit");
 		mntmExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, InputEvent.CTRL_MASK));
 		mntmExit.addActionListener(new ActionListener() {
@@ -76,6 +81,7 @@ public class Main extends JFrame {
 			}
 		});
 		
+		//New menu for creating new records.
 		JMenu mnNew = new JMenu("New");
 		mnNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,6 +90,7 @@ public class Main extends JFrame {
 		});
 		mnFile.add(mnNew);
 		
+		//Creates a new agent record.
 		JMenuItem mntmAgent = new JMenuItem("Agent");
 		mntmAgent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,6 +99,7 @@ public class Main extends JFrame {
 		});
 		mnNew.add(mntmAgent);
 		
+		/*Creates a new package record.*/
 		JMenuItem mntmPackage = new JMenuItem("Package");
 		mntmPackage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -100,6 +108,7 @@ public class Main extends JFrame {
 		});
 		mnNew.add(mntmPackage);
 		
+		/*Creates a new product record.*/
 		JMenuItem mntmProduct = new JMenuItem("Product");
 		mntmProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -108,6 +117,7 @@ public class Main extends JFrame {
 		});
 		mnNew.add(mntmProduct);
 		
+		//Creates a product supplier record.
 		JMenuItem mntmProductSupplier = new JMenuItem("Product Supplier");
 		mntmProductSupplier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -116,6 +126,7 @@ public class Main extends JFrame {
 		});
 		mnNew.add(mntmProductSupplier);
 		
+		//Creates a supplier record.
 		JMenuItem mntmSupplier = new JMenuItem("Supplier");
 		mntmSupplier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -124,6 +135,7 @@ public class Main extends JFrame {
 		});
 		mnNew.add(mntmSupplier);
 		
+		//Saves uncommitted changes to the database.
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -133,10 +145,12 @@ public class Main extends JFrame {
 		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mnFile.add(mntmSave);
 		
+		//Separates the exit item from the others in the File menu.
 		JSeparator separator = new JSeparator();
 		mnFile.add(separator);
 		mnFile.add(mntmExit);
 		
+		//Edit menu.
 		JMenu mnEdit = new JMenu("Edit");
 		mnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -145,6 +159,7 @@ public class Main extends JFrame {
 		});
 		menuBar.add(mnEdit);
 		
+		//Undo any changes.
 		JMenuItem mntmUndo = new JMenuItem("Undo");
 		mntmUndo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -154,6 +169,7 @@ public class Main extends JFrame {
 		mntmUndo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmUndo);
 		
+		//Redo any changes.
 		JMenuItem mntmRedo = new JMenuItem("Redo");
 		mntmRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK));
 		mntmRedo.addActionListener(new ActionListener() {
@@ -163,9 +179,11 @@ public class Main extends JFrame {
 		});
 		mnEdit.add(mntmRedo);
 		
+		//Separates the Undo/Redo items from the others in the Edit menu.
 		JSeparator separator_2 = new JSeparator();
 		mnEdit.add(separator_2);
 		
+		//Cuts a selected item into the clipboard.
 		JMenuItem mntmCut = new JMenuItem("Cut");
 		mntmCut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.CTRL_MASK));
 		mntmCut.addActionListener(new ActionListener() {
@@ -175,6 +193,7 @@ public class Main extends JFrame {
 		});
 		mnEdit.add(mntmCut);
 		
+		//Copies a selected item into the clipboard.
 		JMenuItem mntmCopy = new JMenuItem("Copy");
 		mntmCopy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_MASK));
 		mntmCopy.addActionListener(new ActionListener() {
@@ -184,6 +203,7 @@ public class Main extends JFrame {
 		});
 		mnEdit.add(mntmCopy);
 		
+		//Pastes an item from the clipboard into a selected area; anywhere the cursor is located.
 		JMenuItem mntmPaste = new JMenuItem("Paste");
 		mntmPaste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -193,9 +213,11 @@ public class Main extends JFrame {
 		mntmPaste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmPaste);
 		
+		//Separates the Cut/Copy/Paste from the other items in the Edit menu.
 		JSeparator separator_3 = new JSeparator();
 		mnEdit.add(separator_3);
 		
+		//Selects all the items within the cursor's location.
 		JMenuItem mntmSelectAll = new JMenuItem("Select All");
 		mntmSelectAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -205,6 +227,7 @@ public class Main extends JFrame {
 		mntmSelectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmSelectAll);
 		
+		//Settings menu.
 		JMenu mnSettings = new JMenu("Settings");
 		mnSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -213,6 +236,7 @@ public class Main extends JFrame {
 		});
 		menuBar.add(mnSettings);
 		
+		//Opens a dialog box to set the color scheme of the application.
 		JMenuItem mntmSetColor = new JMenuItem("Set Color");
 		mntmSetColor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -223,6 +247,7 @@ public class Main extends JFrame {
 		});
 		mnSettings.add(mntmSetColor);
 		
+		//Opens a dialog box to set the font settings of the application.
 		JMenuItem mntmSetFont = new JMenuItem("Set Font");
 		mntmSetFont.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -233,9 +258,11 @@ public class Main extends JFrame {
 		});
 		mnSettings.add(mntmSetFont);
 		
+		//Separates the SetFont and SetColor options from the other items in the Settings menu.
 		JSeparator separator_1 = new JSeparator();
 		mnSettings.add(separator_1);
 		
+		//Checkbox menu item used to toggle sound on and off.
 		//final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
 		chckbxmntmToggleSound.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
@@ -244,6 +271,7 @@ public class Main extends JFrame {
 		});
 		mnSettings.add(chckbxmntmToggleSound);
 		
+		//Help menu.
 		JMenu mnHelp = new JMenu("Help");
 		mnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -252,6 +280,7 @@ public class Main extends JFrame {
 		});
 		menuBar.add(mnHelp);
 		
+		//Opens the about dialog box, which displays licensing information and application information.
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -261,6 +290,7 @@ public class Main extends JFrame {
 			}
 		});
 		
+		//Opens a User Manual, which displays information on how to use the application.
 		JMenuItem mntmUserManual = new JMenuItem("User Manual");
 		mntmUserManual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -270,6 +300,7 @@ public class Main extends JFrame {
 		mntmUserManual.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
 		mnHelp.add(mntmUserManual);
 		
+		//Separates the About menu from all the other items in the Help menu.
 		JSeparator separator_4 = new JSeparator();
 		mnHelp.add(separator_4);
 		mnHelp.add(mntmAbout);
@@ -280,6 +311,7 @@ public class Main extends JFrame {
 		
 	}
 	
+	//Plays the sound within the ToggleSound object when the ToggleSound checkbox menu item is checked.
 	public void useSound() {
 		if (chckbxmntmToggleSound.isSelected() == true)
 		{

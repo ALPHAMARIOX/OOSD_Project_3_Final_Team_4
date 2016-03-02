@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class ColorSettings extends JDialog {
 
@@ -51,6 +53,11 @@ public class ColorSettings extends JDialog {
 		}
 		{
 			JComboBox comboBox = new JComboBox();
+			comboBox.addItemListener(new ItemListener() {
+				public void itemStateChanged(ItemEvent e) {
+					
+				}
+			});
 			comboBox.setModel(new DefaultComboBoxModel(new String[] {"---", "Black", "Blue", "Cyan", "Dark Gray", "Gray", "Green", "Light Gray", "Magenta", "Orange", "Pink", "Red", "White", "Yellow"}));
 			contentPanel.add(comboBox);
 		}
