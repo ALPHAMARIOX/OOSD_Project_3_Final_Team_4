@@ -1,5 +1,6 @@
 package gui;
 
+//Imports, including GUI tools, file input and sound.
 import javax.swing.JWindow;
 import javax.swing.ImageIcon;
 import java.awt.Graphics;
@@ -11,14 +12,16 @@ import java.net.*;
 
 public class splash extends JWindow
 {
+	//Creates a background image for the splashscreen.
 	Image img=Toolkit.getDefaultToolkit().getImage("./img/splash.png");
-
 	ImageIcon imgicon=new ImageIcon(img);
+	
 	public static void main(String[]args)
 	{
 		splash sp = new splash();
 	}
 	
+	//Constructor.
 	public splash()
 	{
 		try

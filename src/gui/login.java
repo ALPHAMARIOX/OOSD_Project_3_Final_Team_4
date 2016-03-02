@@ -29,11 +29,14 @@ public class login extends JFrame {
 	private JPanel contentPane;
 	private JTextField tfEmail;
 	private JPasswordField pwfAgtPassword;
+	//private static splash sp;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		//sp = new splash();
+		//sp.setVisible(true);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,6 +47,7 @@ public class login extends JFrame {
 				}
 			}
 		});
+		//sp.setVisible(false);
 	}
 
 	/**
@@ -90,6 +94,6 @@ public class login extends JFrame {
 		});
 		btnLogin.setBounds(233, 204, 117, 25);
 		contentPane.add(btnLogin);
-		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{contentPane, lblEmail, tfEmail, lblPassword, pwfAgtPassword, btnLogin}));
+		setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{tfEmail, pwfAgtPassword, btnLogin}));
 	}
 }
