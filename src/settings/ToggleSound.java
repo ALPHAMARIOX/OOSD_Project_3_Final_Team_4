@@ -23,8 +23,8 @@ public class ToggleSound {
 		fx.play();
 	}
 	
-	public void useSound() {
-		if (chckbxmntmToggleSound.isSelected() == true)
+	public void useSound(boolean toggle) {
+		if (toggle == true)
 		{
 			playSound();
 		}
