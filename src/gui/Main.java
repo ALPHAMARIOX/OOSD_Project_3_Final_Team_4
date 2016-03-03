@@ -227,6 +227,21 @@ public class Main extends JFrame {
 		mntmSelectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
 		mnEdit.add(mntmSelectAll);
 		
+		JSeparator separator_5 = new JSeparator();
+		mnEdit.add(separator_5);
+		
+		JMenuItem mntmFindReplace = new JMenuItem("Find/Replace");
+		mntmFindReplace.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));
+		mnEdit.add(mntmFindReplace);
+		
+		JMenuItem mntmFindNext = new JMenuItem("Find Next");
+		mntmFindNext.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, InputEvent.CTRL_MASK));
+		mnEdit.add(mntmFindNext);
+		
+		JMenuItem mntmFindPrevious = new JMenuItem("Find Previous");
+		mntmFindPrevious.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, InputEvent.CTRL_MASK | InputEvent.SHIFT_MASK));
+		mnEdit.add(mntmFindPrevious);
+		
 		//Settings menu.
 		JMenu mnSettings = new JMenu("Settings");
 		mnSettings.addActionListener(new ActionListener() {
