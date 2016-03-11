@@ -9,6 +9,9 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import settings.ToggleSound;
+
 import java.awt.Window.Type;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,11 +22,12 @@ public class About extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private Main m = new Main();
+	private ToggleSound ts = new ToggleSound();
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			About dialog = new About();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -31,7 +35,7 @@ public class About extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Create the dialog.
@@ -55,7 +59,7 @@ public class About extends JDialog {
 				okButton.setToolTipText("Return to the program.");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						m.useSound();
+						ts.useSound(m.chckbxmntmToggleSound.isSelected());
 						About.this.setVisible(false);
 					}
 				});

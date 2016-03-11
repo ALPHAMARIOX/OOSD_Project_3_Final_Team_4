@@ -28,9 +28,9 @@ import java.awt.event.InputEvent;
 public class Main extends JFrame {
 
 	//Properties for the Main Frame.
-	public ToggleSound ts = new ToggleSound();
+	public ToggleSound ts;
 	private JPanel contentPane;
-	private final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
+	protected final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
 
 	/**
 	 * Launch the application.
@@ -53,6 +53,7 @@ public class Main extends JFrame {
 	 */
 	//Constructor.
 	public Main() {
+		ts = new ToggleSound();
 		setTitle("Travel Experts Database Modifier");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("/home/user1/workspace/OOSD_Project_3_Final_Team_4/img/palmtree.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +67,7 @@ public class Main extends JFrame {
 		JMenu mnFile = new JMenu("File");
 		mnFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		menuBar.add(mnFile);
@@ -76,7 +77,7 @@ public class Main extends JFrame {
 		mntmExit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, InputEvent.CTRL_MASK));
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 				System.exit(0);
 			}
 		});
@@ -85,7 +86,7 @@ public class Main extends JFrame {
 		JMenu mnNew = new JMenu("New");
 		mnNew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnFile.add(mnNew);
@@ -94,7 +95,7 @@ public class Main extends JFrame {
 		JMenuItem mntmAgent = new JMenuItem("Agent");
 		mntmAgent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnNew.add(mntmAgent);
@@ -103,7 +104,7 @@ public class Main extends JFrame {
 		JMenuItem mntmPackage = new JMenuItem("Package");
 		mntmPackage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnNew.add(mntmPackage);
@@ -112,7 +113,7 @@ public class Main extends JFrame {
 		JMenuItem mntmProduct = new JMenuItem("Product");
 		mntmProduct.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnNew.add(mntmProduct);
@@ -121,7 +122,7 @@ public class Main extends JFrame {
 		JMenuItem mntmProductSupplier = new JMenuItem("Product Supplier");
 		mntmProductSupplier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnNew.add(mntmProductSupplier);
@@ -130,7 +131,7 @@ public class Main extends JFrame {
 		JMenuItem mntmSupplier = new JMenuItem("Supplier");
 		mntmSupplier.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnNew.add(mntmSupplier);
@@ -139,7 +140,7 @@ public class Main extends JFrame {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mntmSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
@@ -154,7 +155,7 @@ public class Main extends JFrame {
 		JMenu mnEdit = new JMenu("Edit");
 		mnEdit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		menuBar.add(mnEdit);
@@ -163,7 +164,7 @@ public class Main extends JFrame {
 		JMenuItem mntmUndo = new JMenuItem("Undo");
 		mntmUndo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mntmUndo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, InputEvent.CTRL_MASK));
@@ -174,7 +175,7 @@ public class Main extends JFrame {
 		mntmRedo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Y, InputEvent.CTRL_MASK));
 		mntmRedo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnEdit.add(mntmRedo);
@@ -188,7 +189,7 @@ public class Main extends JFrame {
 		mntmCut.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, InputEvent.CTRL_MASK));
 		mntmCut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnEdit.add(mntmCut);
@@ -198,7 +199,7 @@ public class Main extends JFrame {
 		mntmCopy.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, InputEvent.CTRL_MASK));
 		mntmCopy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnEdit.add(mntmCopy);
@@ -207,7 +208,7 @@ public class Main extends JFrame {
 		JMenuItem mntmPaste = new JMenuItem("Paste");
 		mntmPaste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mntmPaste.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V, InputEvent.CTRL_MASK));
@@ -221,7 +222,7 @@ public class Main extends JFrame {
 		JMenuItem mntmSelectAll = new JMenuItem("Select All");
 		mntmSelectAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mntmSelectAll.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_MASK));
@@ -246,7 +247,7 @@ public class Main extends JFrame {
 		JMenu mnSettings = new JMenu("Settings");
 		mnSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		menuBar.add(mnSettings);
@@ -255,7 +256,7 @@ public class Main extends JFrame {
 		JMenuItem mntmSetColor = new JMenuItem("Set Color");
 		mntmSetColor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 				ColorSettings cSet = new ColorSettings();
 				cSet.setVisible(true);
 			}
@@ -266,7 +267,7 @@ public class Main extends JFrame {
 		JMenuItem mntmSetFont = new JMenuItem("Set Font");
 		mntmSetFont.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 				FontSettings fSet = new FontSettings();
 				fSet.setVisible(true);
 			}
@@ -281,7 +282,7 @@ public class Main extends JFrame {
 		//final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
 		chckbxmntmToggleSound.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		mnSettings.add(chckbxmntmToggleSound);
@@ -290,7 +291,7 @@ public class Main extends JFrame {
 		JMenu mnHelp = new JMenu("Help");
 		mnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 			}
 		});
 		menuBar.add(mnHelp);
@@ -299,7 +300,7 @@ public class Main extends JFrame {
 		JMenuItem mntmAbout = new JMenuItem("About");
 		mntmAbout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
 				About about = new About();
 				about.setVisible(true);
 			}
@@ -309,7 +310,9 @@ public class Main extends JFrame {
 		JMenuItem mntmUserManual = new JMenuItem("User Manual");
 		mntmUserManual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				useSound();
+				ts.useSound(chckbxmntmToggleSound.isSelected());
+				UserManual uManual = new UserManual();
+				uManual.setVisible(true);
 			}
 		});
 		mntmUserManual.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));

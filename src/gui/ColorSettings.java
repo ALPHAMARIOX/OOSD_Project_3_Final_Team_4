@@ -32,7 +32,8 @@ public class ColorSettings extends JDialog {
 	public Color brown = new Color(80, 42, 42);
 	public Color goldenrod = new Color(0xDAA520);
 	public Color cinnamon = new Color(0x7B3F00);
-	public Color mustard;
+	public Color lemon = new Color(0xD6C537);
+	public Color mustard = new Color(0xFFCC11);
 	public Color greenMist;
 	public Color bacon = new Color(0xC65D57);
 	public Color salmon = new Color(0xFA8072);
@@ -43,7 +44,7 @@ public class ColorSettings extends JDialog {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		try {
 			ColorSettings dialog = new ColorSettings();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -51,7 +52,7 @@ public class ColorSettings extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 	/**
 	 * Create the dialog.

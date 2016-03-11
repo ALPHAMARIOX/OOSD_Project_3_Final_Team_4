@@ -1,10 +1,7 @@
 package TE_OBJ;
 
 import java.util.Calendar;
-
 import sun.security.util.Password;
-/*import java.io.*;
-import sun.audio.*;*/
 
 public class TE_Classes {
 	
@@ -58,6 +55,12 @@ public class TE_Classes {
 		public void setAgtPosition(String agtPosition) {
 			this.agtPosition = agtPosition;
 		}
+		public int getAgencyId() {
+			return agencyId;
+		}
+		public void setAgencyId() {
+			this.agencyId = agencyId;
+		}
 		public Password getAgtPassword() {
 			return agtPassword;
 		}
@@ -73,6 +76,7 @@ public class TE_Classes {
 		private String agtBusPhone;
 		private String agtEmail;
 		private String agtPosition;
+		private int agencyId;
 		private Password agtPassword;
 	}
 	
