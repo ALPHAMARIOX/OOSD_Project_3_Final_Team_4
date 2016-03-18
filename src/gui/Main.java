@@ -1,35 +1,42 @@
 package gui;
 
+//import packages.
+import TE_OBJ.TE_Classes;
+
+import settings.ToggleSound;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import settings.ToggleSound;
-
-import java.awt.Toolkit;
 import javax.swing.JTabbedPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
-import java.awt.event.ItemListener;
-import java.awt.event.ItemEvent;
 import javax.swing.KeyStroke;
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 public class Main extends JFrame {
 
 	//Properties for the Main Frame.
 	public ToggleSound ts;
 	private JPanel contentPane;
+	private JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	protected final JCheckBoxMenuItem chckbxmntmToggleSound = new JCheckBoxMenuItem("Toggle Sound");
 
 	/**
@@ -325,9 +332,24 @@ public class Main extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
+		
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		contentPane.add(tabbedPane);
+		ImageIcon tabIcon = createImageIcon("./img/palmtree.png");
 		
 	}
+
+	/** Returns an ImageIcon, or null if the path was invalid. */
+    protected static ImageIcon createImageIcon(String path) {
+        java.net.URL imgURL = Main.class.getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL);
+        } else {
+            System.err.println("Couldn't find file: " + path);
+            return null;
+        }
+    }
 	
 	//Plays the sound within the ToggleSound object when the ToggleSound checkbox menu item is checked.
 	public void useSound() {
