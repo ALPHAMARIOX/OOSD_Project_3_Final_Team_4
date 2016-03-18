@@ -58,13 +58,19 @@ public class TE_Classes {
 		public int getAgencyId() {
 			return agencyId;
 		}
-		public void setAgencyId() {
+		public void setAgencyId(int agencyId) {
 			this.agencyId = agencyId;
+		}
+		public String getAgtUsername() {
+			return agtUsername;
+		}
+		public void setAgtUsername(String agtUsername) {
+			this.agtUsername = agtUsername;
 		}
 		public Password getAgtPassword() {
 			return agtPassword;
 		}
-		public void setAgtPassword() {
+		public void setAgtPassword(Password agtPassword) {
 			this.agtPassword = agtPassword;
 		}
 
@@ -77,6 +83,7 @@ public class TE_Classes {
 		private String agtEmail;
 		private String agtPosition;
 		private int agencyId;
+		private String agtUsername;
 		private Password agtPassword;
 	}
 	
