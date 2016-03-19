@@ -338,6 +338,8 @@ public class Main extends JFrame {
 		contentPane.add(tabbedPane);
 		ImageIcon tabIcon = createImageIcon("./img/palmtree.png");
 		
+		
+		
 	}
 
 	/** Returns an ImageIcon, or null if the path was invalid. */
