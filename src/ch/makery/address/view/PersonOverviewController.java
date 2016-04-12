@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import application.MainApp;
-import ch.makery.address.model.*;
+import TE_OBJ.TE_Classes;
 import ch.makery.address.view.tab.AgentsController;
 import ch.makery.address.view.tab.CustomersController;
 import ch.makery.address.view.tab.PackagesController;
