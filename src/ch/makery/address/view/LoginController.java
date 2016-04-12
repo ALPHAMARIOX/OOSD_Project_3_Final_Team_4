@@ -1,7 +1,5 @@
 package ch.makery.address.view;
 
-import java.awt.event.ActionEvent;
-
 import application.Login;
 import application.MainApp;
 import javafx.fxml.FXML;
@@ -10,12 +8,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
+import javafx.event.*;
 
 public class LoginController {
 	
 	private Login login;
 	private MainApp main;
-	Stage primaryStage;
+	private Stage primaryStage;
 	
 	@FXML
 	private TextField tfUsername;
@@ -30,9 +29,10 @@ public class LoginController {
 	private Button btnLogin;
 	
 	@FXML
-	public void login() {
-		if (tfUsername.getText() != null && pwfAgents.getText() != null) {
-			System.out.print("Works");
+	private void login() {
+		//Button stuff.
+		if (tfUsername.getText() != "" && pwfAgents.getText() != "") {
+			main.start(primaryStage);
 		}
 		else {
 			lblError.setVisible(true);
@@ -40,19 +40,12 @@ public class LoginController {
 			pwfAgents.clear();
 		}
 	}
-	/*public void initialize() {
+	
+	public void initialize() {
 		
 		btnLogin.setOnAction((event) -> {
-			if (tfUsername.getText() != null && pwfAgents.getText() != null) {
-				//Login code.
-				main.start(primaryStage);
-			}
-			else {
-				lblError.setVisible(true);
-				tfUsername.clear();
-				pwfAgents.clear();
-			}
+			login();
 		});
-	}*/
+	}
 	
 }
