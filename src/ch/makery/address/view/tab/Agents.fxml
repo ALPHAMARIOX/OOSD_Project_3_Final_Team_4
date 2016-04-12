@@ -9,7 +9,7 @@
    <children>
       <TableView layoutX="-6.0" layoutY="-7.0" prefHeight="669.0" prefWidth="1280.0">
         <columns>
-          <TableColumn fx:id="colAgtId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colAgtId" editable="false" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colAgtFName" prefWidth="95.0" text="First Name" />
             <TableColumn fx:id="colAgtMInit" prefWidth="122.0" text="Middle Initials" />
             <TableColumn fx:id="colAgtLName" prefWidth="130.0" text="Last Name" />
