@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ch.makery.address.view.PersonOverviewController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="ch.makery.address.view.MainController">
    <children>
       <TabPane layoutY="47.0" prefHeight="673.0" prefWidth="1287.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>

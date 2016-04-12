@@ -3,7 +3,7 @@ package application;
 import java.io.IOException;
 
 import ch.makery.address.view.LoginController;
-import ch.makery.address.view.PersonOverviewController;
+import ch.makery.address.view.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -41,7 +41,7 @@ public class MainApp extends Application {
             // Set person overview into the center of root layout.
             rootLayout.setCenter(personOverview);
             
-            PersonOverviewController controller = loader.getController();
+            MainController controller = loader.getController();
             controller.setMainApp(this);
             
         } catch (IOException e) {
