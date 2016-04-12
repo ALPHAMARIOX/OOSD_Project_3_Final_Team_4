@@ -1,0 +1,42 @@
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String checkLogin = "SELECT * FROM customerlogin WHERE username=?";
+		String sendTo = "login.jsp";
+		Connection conn = DBConnect.getConnection();
+		try {
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customerlogin WHERE username=?");
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
+			stmt.setString(1, username);
+			ResultSet rs = stmt.executeQuery();
+			if(rs.next()){
+				if(password.equals(rs.getString(3))){
+					request.getSession().setAttribute("id", rs.getString(2));
+					sendTo = "account.jsp";
+				}
+				else{
+					request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
+				}
+			}
+			else{
+				request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect(sendTo);
+	}
+
+public static Connection getConnection(){
+		Connection conn = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/travelexperts", "root", "");
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return conn;
+	}
