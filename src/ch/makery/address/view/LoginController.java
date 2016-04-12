@@ -32,7 +32,7 @@ public class LoginController {
 	private void login() {
 		//Button stuff.
 		if (tfUsername.getText() != "" && pwfAgents.getText() != "") {
-			main.start(primaryStage);
+			main = new MainApp();
 		}
 		else {
 			lblError.setVisible(true);
