@@ -20,20 +20,20 @@ public class TravExConn {
 		Connection conn = getConnection();
 		try {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customerlogin WHERE username=?");
-			String username;
-			String password;
-			stmt.setString(1, username);
+			//String username = stmt.get;
+			//String password;
+			//stmt.setString(1, username);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
-				if(password.equals(rs.getString(3))){
-					request.getSession().setAttribute("id", rs.getString(2));
-				}
-				else{
-					request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
-				}
+				//if(password.equals(rs.getString(3))){
+					//request.getSession().setAttribute("id", rs.getString(2));
+				//}
+				//else{
+					//request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
+				//}
 			}
 			else{
-				request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
+				//request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
