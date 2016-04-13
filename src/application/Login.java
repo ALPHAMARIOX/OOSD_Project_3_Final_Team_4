@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 public class Login extends Application {
 
+	MainApp main = new MainApp();
 	Stage primaryStage;
 	@Override
 	public void start(Stage primaryStage) {
@@ -35,6 +36,11 @@ public class Login extends Application {
 	
 	public void showMain() {
 		
+	}
+	
+	private void dispose() throws Exception {
+		main.init();
+		primaryStage.close();
 	}
 
 	public static void main(String[] args) {
