@@ -34,7 +34,8 @@ public class Login extends Application {
 		}	
 	}
 	
-	public void dispose() throws Exception {
+	public void dispose(Stage primaryStage) throws Exception {
+		this.primaryStage = primaryStage;
 		main.init();
 		primaryStage.close();
 	}

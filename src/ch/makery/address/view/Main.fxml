@@ -25,11 +25,6 @@
                   <fx:include fx:id="tabPackages" source="tab/Packages.fxml" />
                </content>
             </Tab>
-            <Tab text="Products">
-               <content>
-                  <fx:include fx:id="tabProducts" source="tab/Products.fxml" />
-               </content>
-            </Tab>
             <Tab text="Suppliers">
                <content>
                   <fx:include fx:id="tabSuppliers" source="tab/Suppliers.fxml" />

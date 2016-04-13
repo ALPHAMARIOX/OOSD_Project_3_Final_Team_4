@@ -10,7 +10,6 @@ import ch.makery.address.view.tab.AgentsController;
 import ch.makery.address.view.tab.CustomersController;
 import ch.makery.address.view.tab.PackagesController;
 import ch.makery.address.view.tab.ProductSuppliersController;
-import ch.makery.address.view.tab.ProductsController;
 import ch.makery.address.view.tab.SuppliersController;
 
 public class MainController {
@@ -21,8 +20,6 @@ public class MainController {
     CustomersController custController;
     @FXML
     PackagesController pkgController;
-    @FXML
-    ProductsController prdController;
     @FXML
     SuppliersController supController;
     @FXML
@@ -48,7 +45,6 @@ public class MainController {
         agtController.init(this);
         custController.init(this);
         pkgController.init(this);
-        prdController.init(this);
         supController.init(this);
         psuController.init(this);
     }

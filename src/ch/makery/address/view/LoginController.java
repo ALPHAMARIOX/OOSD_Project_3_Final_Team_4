@@ -10,7 +10,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-//import javafx.stage.Stage;
+import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 //import javafx.event.*;
@@ -19,7 +19,7 @@ public class LoginController {
 	
 	private Login login = new Login();
 	//private MainApp main;
-	//private Stage primaryStage;
+	private Stage primaryStage;
 	
 	@FXML
 	private TextField tfUsername;
@@ -37,7 +37,7 @@ public class LoginController {
 	private void login() throws Exception {
 		//Button stuff.
 		if (tfUsername.getText() != "" && pwfAgents.getText() != "") {
-			login.dispose();
+			login.dispose(primaryStage);
 		}
 		else {
 			lblError.setVisible(true);
