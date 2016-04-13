@@ -5,4 +5,8 @@ public class RootController {
 	
 	@FXML
 	private MenuItem mniClose;
+	
+	private void Exit() {
+		
+	}
 }
