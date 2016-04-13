@@ -1,20 +1,25 @@
 package ch.makery.address.view;
 
+import java.awt.event.ActionEvent;
+
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import application.Login;
-import application.MainApp;
+import javafx.event.EventHandler;
+//import application.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+//import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
-import javafx.event.*;
+//import javafx.event.*;
 
 public class LoginController {
 	
-	private Login login;
-	private MainApp main;
-	private Stage primaryStage;
+	private Login login = new Login();
+	//private MainApp main;
+	//private Stage primaryStage;
 	
 	@FXML
 	private TextField tfUsername;
@@ -29,10 +34,10 @@ public class LoginController {
 	private Button btnLogin;
 	
 	@FXML
-	private void login() {
+	private void login() throws Exception {
 		//Button stuff.
 		if (tfUsername.getText() != "" && pwfAgents.getText() != "") {
-			main = new MainApp();
+			login.dispose();
 		}
 		else {
 			lblError.setVisible(true);
@@ -44,7 +49,12 @@ public class LoginController {
 	public void initialize() {
 		
 		btnLogin.setOnAction((event) -> {
-			login();
+			try {
+				login();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		});
 	}
 	

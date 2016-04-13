@@ -34,11 +34,7 @@ public class Login extends Application {
 		}	
 	}
 	
-	public void showMain() {
-		
-	}
-	
-	private void dispose() throws Exception {
+	public void dispose() throws Exception {
 		main.init();
 		primaryStage.close();
 	}
