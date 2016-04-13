@@ -86,10 +86,10 @@ public class TE_Classes {
 		private String agtPassword;
 	}
 	
-	public class Package {
+	public class TPackage {
 		
 		//Constructor.
-		public Package(){
+		public TPackage(){
 			
 		}
 		
