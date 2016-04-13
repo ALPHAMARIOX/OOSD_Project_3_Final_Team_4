@@ -75,7 +75,7 @@ public class TravExConn {
 		return agents;
 	}
 	
-	public Agent getAgents() {
+	/*public Agent getAgents() {
 		Agent agent = new Agent();
 		Connection conn = getConnection();
 		String sql = "SELECT * FROM Agents";
@@ -98,7 +98,7 @@ public class TravExConn {
 			e.printStackTrace();
 		}
 		return agent;
-	}
+	}*/
 	
 	//Get all customers.
 		public ArrayList<Customer> getAllCustomers() {
@@ -136,8 +136,8 @@ public class TravExConn {
 					for (TPackage pack : packs) {
 						pack.setPackageId(Integer.parseInt(rs.getString(1)));
 						pack.setPkgName(rs.getString(2));
-						pack.setPkgStartDate(rs.getString(3));
-						pack.setPkgEndDate(rs.getString(4));
+						//pack.setPkgStartDate(rs.getString(3));
+						//pack.setPkgEndDate(rs.getString(4));
 						pack.setPkgBasePrice(Double.parseDouble(rs.getString(5)));
 						pack.setPkgAgencyCommission(Double.parseDouble(rs.getString(6)));
 						pack.setPkgDesc(rs.getString(7));
