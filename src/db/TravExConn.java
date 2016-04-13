@@ -1,10 +1,8 @@
 package db; //Database package.
+
 import java.sql.*; //Import the SQL package.
 import java.util.ArrayList;
 import java.util.Calendar;
-
-import com.sun.crypto.provider.RSACipher;
-
 import TE_OBJ.TE_Classes.*;
 
 public class TravExConn {
@@ -22,29 +20,21 @@ public class TravExConn {
 		return conn;
 	}
 	
-	public static void auth() {
+	public static Agent auth() {
+		Agent authAgt = new Agent();
 		Connection conn = getConnection();
 		try {
-			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM customerlogin WHERE username=?");
-			//String username = stmt.get;
-			//String password;
-			//stmt.setString(1, username);
+			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM agentlogin WHERE username=?");
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
-				//if(password.equals(rs.getString(3))){
-					//request.getSession().setAttribute("id", rs.getString(2));
-				//}
-				//else{
-					//request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
-				//}
-			}
-			else{
-				//request.getSession().setAttribute("failedLogin",  "Invalid User ID or Password");
+				authAgt.setAgtUsername(rs.getString(1));
+				authAgt.setAgtPassword(rs.getString(3));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return authAgt;
 	}
 	
 	//Get all agents.
