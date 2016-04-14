@@ -3,6 +3,8 @@ package db; //Database package.
 import java.sql.*; //Import the SQL package.
 import java.util.ArrayList;
 import java.util.Calendar;
+
+import TE_OBJ.TE_Classes;
 import TE_OBJ.TE_Classes.*;
 
 public class TravExConn {
@@ -21,7 +23,7 @@ public class TravExConn {
 	}
 	
 	public static Agent auth() {
-		Agent authAgt = new Agent();
+		Agent authAgt = new Agent;
 		Connection conn = getConnection();
 		try {
 			PreparedStatement stmt = conn.prepareStatement("SELECT * FROM agentlogin WHERE username=?");

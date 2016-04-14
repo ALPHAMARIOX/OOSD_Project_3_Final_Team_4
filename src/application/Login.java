@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Login extends Application {
@@ -35,7 +36,10 @@ public class Login extends Application {
 	}
 	
 	public void dispose(Stage mainStage) throws Exception {
-		main.start(primaryStage);
+		/*FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(MainApp.class.getResource("view/Main.fxml"));
+		AnchorPane manchor = (AnchorPane) loader.load();*/
+		main.start(mainStage);
 		
 	}
 
