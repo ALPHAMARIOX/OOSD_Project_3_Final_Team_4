@@ -19,7 +19,7 @@ public class LoginController {
 	
 	private Login login = new Login();
 	//private MainApp main;
-	private Stage primaryStage;
+	private Stage mainStage;
 	
 	@FXML
 	private TextField tfUsername;
@@ -37,7 +37,7 @@ public class LoginController {
 	private void login() throws Exception {
 		//Button stuff.
 		if (tfUsername.getText() != "" && pwfAgents.getText() != "") {
-			login.dispose(primaryStage);
+			login.dispose(mainStage);
 		}
 		else {
 			lblError.setVisible(true);
