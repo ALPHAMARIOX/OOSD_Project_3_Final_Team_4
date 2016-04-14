@@ -22,7 +22,7 @@ public class TravExConn {
 		return conn;
 	}
 	
-	public static Agent auth() {
+	/*public static Agent auth() {
 		Agent authAgt = new Agent;
 		Connection conn = getConnection();
 		try {
@@ -37,7 +37,7 @@ public class TravExConn {
 			e.printStackTrace();
 		}
 		return authAgt;
-	}
+	}*/
 	
 	//Get all agents.
 	public ArrayList<Agent> getAllAgents() {

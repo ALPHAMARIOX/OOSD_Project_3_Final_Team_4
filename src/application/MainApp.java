@@ -19,6 +19,7 @@ public class MainApp extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) {
+		Splash sp = new Splash();
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle
 		("Travel Experts Database Modifier");
